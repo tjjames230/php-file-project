@@ -1,0 +1,3 @@
+<?php
+
+$all_files = [];
