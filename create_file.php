@@ -8,9 +8,16 @@ function command()
 	$user_response = trim(fgets(STDIN));
 
 	if ($user_response == 1) {
-		echo "the user response was 1";
+		create_file();
+		command();
+	} else if ($user_response == 2) {
+		echo "the user response was 2";
+		command();
+	} else if ($user_response == 3) {
+		exit();
 	} else {
 		echo "not an acceptable input";
+		command();
 	}
 }
 
