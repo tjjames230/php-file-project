@@ -4,26 +4,28 @@ include './all_files.php';
 
 function command()
 {
-	read_options();
-	$user_response = trim(fgets(STDIN));
+	while (true) {
+		read_options();
+		$user_response = trim(fgets(STDIN));
 
-	if ($user_response == 1) {
-		create_file();
-		command();
-	} else if ($user_response == 2) {
-		echo "the user response was 2";
-		command();
-	} else if ($user_response == 3) {
-		read_file();
-		command();
-	} else if ($user_response == 4) {
-		edit_file();
-		command();
-	} else if ($user_response == 5) {
-		exit();
-	} else {
-		echo "not an acceptable input";
-		command();
+		if ($user_response == 1) {
+			create_file();
+			command();
+		} else if ($user_response == 2) {
+			echo "the user response was 2";
+			command();
+		} else if ($user_response == 3) {
+			read_file();
+			command();
+		} else if ($user_response == 4) {
+			edit_file();
+			command();
+		} else if ($user_response == 5) {
+			exit();
+		} else {
+			echo "not an acceptable input";
+			command();
+		}
 	}
 }
 
